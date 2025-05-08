@@ -12,7 +12,7 @@ The app is developed by @isarab with the assistance of Copilot. It is licensed u
 
 Tags: Google Apps Script; web app; Google Sheets; query; HTML output
 
-Build 1.1.0
+Build 1.0.0
 ---
 2025-05-08
 
