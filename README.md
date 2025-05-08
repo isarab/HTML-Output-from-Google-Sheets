@@ -8,7 +8,7 @@ Additional Configurations
 - Use "Executed as Me" deployment mode
 - The Google Sheets file needs Viewer access for Anyone
 
-The app is developed by @isarab with the assistance of Copilot. It is licensed under MIT License.
+This app is developed by @isarab with the assistance of Copilot. It is licensed under MIT License.
 
 Tags: Google Apps Script; web app; Google Sheets; query; HTML output
 
