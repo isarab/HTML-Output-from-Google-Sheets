@@ -10,10 +10,11 @@ Additional Configurations
 
 The app is developed by @isarab with the assistance of Copilot. It is licensed under MIT License.
 
-Tags: Google Apps Script; web app, Google Sheets; query; HTML output
+Tags: Google Apps Script; web app; Google Sheets; query; HTML output
 
 Build 1.1.0
-20250508
+---
+2025-05-08
 
 Wish List
 - Aesthetic improvement for large-screen interface
