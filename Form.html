@@ -1,0 +1,96 @@
+<!--Version 1.0.0-->
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ชื่อเว็บเพจ</title>
+    <base target="_top">
+    <style>
+      .page-container {
+        width: 80vw;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      input, button {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        font-size: 36px;
+        font-weight: bold;
+        color: #1528a1;
+      }
+      #result a {
+        display: block;
+        font-size: 36px;
+        padding: 10px;
+        word-wrap: break-word;
+      }
+      #version {
+        font-size: 18px;
+        color: Gray;
+      }
+      @media (max-width: 768px) {
+          .page-container {
+          width: 90vw;
+        }
+      }
+      body {
+        font-family: Angsana New;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+      h2 {
+        font-family: Angsana New;
+        font-size: 48px;
+        color: #de9904;
+      }
+      input {
+        text-align: center; /* Centers the user input */
+        font-size: 36px;
+        padding: 10px;
+        width: 300px;
+        border: 2px solid #555;
+        border-radius: 5px;
+      }
+      input::placeholder {
+        text-align: center; /* Centers the placeholder text */
+      }
+      .error-message {
+        color: red;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="version"><p>v2.0</p></div>
+    <div class="page-container">
+      <hr>
+      <h2>หัวข้อหลัก</h2>
+      <hr>
+      <h2>หัวข้อรอง<br>หัวข้อรอง</h2>
+      <p>คำอธิบาย<br>คำอธิบาย</p>
+      <input type="text" id="searchTerm" placeholder="###">
+      <p><button onclick="search()">ค้นหา</button></p>
+      <br>
+      <p id="result"><a href="" id="link" target="_blank"></a></p>
+    </div>
+    <script>
+      function search() {
+        var term = document.getElementById('searchTerm').value;
+        google.script.run.withSuccessHandler(function(response) {
+          var resultText = document.getElementById('result');
+          var linkElement = document.getElementById('link');
+          if (response.startsWith("้http")) {  // If the response is a valid URL
+            linkElement.href = response;
+            resultText.classList.remove("error-message"); // Remove error styling if valid
+          } else {
+            resultText.innerHTML = response;  // Show error message
+            resultText.classList.add("error-message");  // Apply error styling
+          }
+        }).getData(term);
+      }
+    </script>
+  </body>
+</html>
